@@ -1,0 +1,8 @@
+{
+  "ConnectionStrings": {
+    "Default": "Server=localhost;Port=3306;Database=english_center;User=root;Password=YOUR_PASSWORD;"
+  },
+  "Jwt": {
+    "Secret": "YOUR_DEV_JWT_SECRET_MIN_32_CHARS"
+  }
+}
