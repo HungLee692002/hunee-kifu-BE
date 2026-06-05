@@ -205,7 +205,7 @@ public sealed class ScheduleService : IScheduleService
     {
         var session = await _db.LessonSessions.FirstOrDefaultAsync(s => s.Id == id, cancellationToken)
             ?? throw new NotFoundException("Không tìm thấy buổi học.");
-        return (await MapSessionsAsync([session], cancellationToken)).Single();
+        return (await MapSessionsAsync(new[] { session }, cancellationToken)).Single();
     }
 
     public async Task<LessonScheduleOverrideDto?> GetOverrideAsync(Guid sessionId, CancellationToken cancellationToken = default)
@@ -313,7 +313,7 @@ public sealed class ScheduleService : IScheduleService
         IReadOnlyList<LessonSession> sessions,
         CancellationToken ct)
     {
-        if (sessions.Count == 0) return [];
+        if (sessions.Count == 0) return Array.Empty<LessonSessionDto>();
 
         var ids = sessions.Select(s => s.Id).ToList();
         var staff = await _db.LessonSessionStaffs

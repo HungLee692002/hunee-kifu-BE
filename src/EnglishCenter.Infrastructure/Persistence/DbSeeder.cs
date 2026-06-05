@@ -9,13 +9,13 @@ namespace EnglishCenter.Infrastructure.Persistence;
 public static class DbSeeder
 {
     private static readonly (string Code, string Name)[] Roles =
-    [
+    {
         ("Admin", "Quản trị viên"),
         ("AcademicStaff", "Giáo vụ"),
         ("Accountant", "Kế toán"),
         ("Teacher", "Giáo viên"),
         ("Receptionist", "Lễ tân"),
-    ];
+    };
 
     public static async Task SeedAsync(IServiceProvider services, CancellationToken cancellationToken = default)
     {

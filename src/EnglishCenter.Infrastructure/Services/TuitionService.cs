@@ -12,11 +12,11 @@ namespace EnglishCenter.Infrastructure.Services;
 public sealed class TuitionService : ITuitionService
 {
     private static readonly AttendanceStatus[] BillableAttendanceStatuses =
-    [
+    {
         AttendanceStatus.Present,
         AttendanceStatus.Late,
         AttendanceStatus.Excused,
-    ];
+    };
 
     private readonly AppDbContext _db;
     private readonly ICurrentUserService _currentUser;

@@ -261,6 +261,7 @@ CORS: nếu FE và API khác domain, cấu hình CORS trên BE cho origin FE.
 | Build fail | Sai path project | Kiểm tra Root Directory, lệnh `dotnet publish` |
 | `MSB1003` không tìm thấy `.sln` | Root Directory sai | Repo chỉ BE → Root Directory **trống**; monorepo → `EnglishCenter.Backend` |
 | `MSB1003` | Thiếu `railway.toml` | Commit `railway.toml` + buildCommand có `dotnet restore ...sln` |
+| `CS1525` / `Invalid expression term '['` | SDK preview trên Nixpacks | Dùng `Dockerfile` + SDK 8 stable; tránh cú pháp C# 12 `[...]` nếu build bằng Nixpacks cũ |
 | Crash ngay khi start | Thiếu connection string | Thêm `ConnectionStrings__Default` |
 | Unhealthy / timeout | Sai port | Set `ASPNETCORE_URLS=http://0.0.0.0:${PORT}` |
 | DB connection fail | Sai host / firewall | Dùng biến MySQL reference, cùng Railway project |
