@@ -1,7 +1,6 @@
 {
   "$schema": "https://schema.railpack.com",
   "provider": "dotnet",
-  "buildCommand": "dotnet publish src/EnglishCenter.Api/EnglishCenter.Api.csproj -c Release -o out",
   "deploy": {
     "startCommand": "./out/EnglishCenter.Api"
   }
