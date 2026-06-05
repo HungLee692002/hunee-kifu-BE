@@ -1,0 +1,13 @@
+# Fallback cho Nixpacks nếu auto-detect dotnet restore thất bại
+
+[phases.setup]
+nixPkgs = ["dotnet-sdk_8"]
+
+[phases.build]
+cmds = [
+  "dotnet restore EnglishCenter.Backend.sln",
+  "dotnet publish src/EnglishCenter.Api/EnglishCenter.Api.csproj -c Release --no-restore -o out",
+]
+
+[start]
+cmd = "dotnet out/EnglishCenter.Api.dll"

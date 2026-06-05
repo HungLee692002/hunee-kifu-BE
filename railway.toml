@@ -1,0 +1,13 @@
+# Railway config — repo root = EnglishCenter.Backend (có EnglishCenter.Backend.sln ở đây)
+# Settings → Root Directory: để TRỐNG (/) — KHÔNG điền "EnglishCenter.Backend"
+
+[build]
+builder = "NIXPACKS"
+buildCommand = "dotnet restore EnglishCenter.Backend.sln && dotnet publish src/EnglishCenter.Api/EnglishCenter.Api.csproj -c Release --no-restore -o out"
+
+[deploy]
+startCommand = "dotnet out/EnglishCenter.Api.dll"
+healthcheckPath = "/health"
+healthcheckTimeout = 120
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 5
