@@ -1,0 +1,3 @@
+[variables]
+RAILPACK_INSTALL_CMD = "dotnet restore EnglishCenter.Backend.sln"
+RAILPACK_BUILD_CMD = "dotnet publish src/EnglishCenter.Api/EnglishCenter.Api.csproj --no-restore -c Release -o out"
